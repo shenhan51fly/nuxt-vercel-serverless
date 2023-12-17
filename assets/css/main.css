@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base{
+    :root{
+        --color-muted:#888;
+        --color-active:#f97316;
+        --color-hover:#facc15
+    }
+}
+html, body, #__nuxt{
+    height: 100%;
+}
+#__nuxt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app{
+    display:grid;
+    width:20rem;
+    height:6.75rem;
+    grid-template-rows:2rem 3rem 1fr;
+    grid-template-columns:5em 1fr;
+}
+.mask-star-2{
+    mask-size: 79%;
+    transition: all 0.6s;
+}
+.rating :where(input){
+    background-color: var(--color-muted);
+}
+.rating .active{
+    background-color: var(--color-active);
+}
+.rating .active ~ input{
+    background-color: var(--color-active);
+}
+body .rating :hover{
+    background-color: var(--color-hover);
+}
+body .rating :hover ~ input{
+    background-color: var(--color-hover);
+}
